@@ -1,0 +1,50 @@
+package com.tiago.erp.repository;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.tiago.erp.model.Empresa;
+import com.tiago.erp.model.RamoAtividade;
+import com.tiago.erp.model.TipoEmpresa;
+
+public class CamadaPersistencia {
+	
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("cadastro-empresa");
+		
+		EntityManager em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		
+		//Declarando os repositorios
+		RamoAtividades ramoAtividade = new RamoAtividades(em);
+		Empresas empresas = new Empresas(em);
+		
+		//Buscando as informações do banco
+		List<RamoAtividade> ListaDeRamoAtividades = ramoAtividade.pesquisar("");
+		List<Empresa> ListaDeEmpresa = empresas.pesquisar("");
+		System.out.println(ListaDeEmpresa);
+		
+		//Criando a empresa
+		Empresa empresa = new Empresa();
+		empresa.setNomeFantasia("Fulano Gomes Prato");
+		empresa.setCnpj("44.432.512/0001-44");
+		empresa.setRazaoSocial("Fulano Gomes 44432512000144");
+		empresa.setTipo(TipoEmpresa.MEI);
+		empresa.setDataFundacao(new Date());
+		empresa.setRamoAtividade(ListaDeRamoAtividades.get(0));
+		
+		
+		//Salvando a empresa
+		empresas.guardar(empresa);
+		
+		em.getTransaction().commit();
+		
+		//Verificando se a inserção funcionou
+		
+	}
+}

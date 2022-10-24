@@ -1,0 +1,15 @@
+insert into ramo_atividade (id, descricao) values (1, 'Distribuição de alimentos');
+insert into ramo_atividade (id, descricao) values (2, 'Telecomunicações');
+insert into ramo_atividade (id, descricao) values (3, 'Vestuário');
+insert into ramo_atividade (id, descricao) values (4, 'Lavanderia');
+insert into ramo_atividade (id, descricao) values (5, 'Gráfica');
+insert into ramo_atividade (id, descricao) values (6, 'Mecânica');
+insert into ramo_atividade (id, descricao) values (7, 'Turismo');
+insert into ramo_atividade (id, descricao) values (8, 'Saúde');
+insert into ramo_atividade (id, descricao) values (9, 'Educação');
+insert into ramo_atividade (id, descricao) values (10, 'Lazer');
+
+insert into empresa (id, cnpj, nome_fantasia, razao_social, tipo, data_fundacao, ramo_atividade_id) values (1, '70.578.777/0001-84', 'Mercado Gomes', 'Mercado Gomes e Distribuidor de Alimentos', 'LTDA', '1998-10-10', 1);
+insert into empresa (id, cnpj, nome_fantasia, razao_social, tipo, data_fundacao, ramo_atividade_id) values (2, '33.457.945/0001-15', 'Mecânica Auto', 'Auto Peças Mecânica', 'SA', '1999-12-15', 2);
+insert into empresa (id, cnpj, nome_fantasia, razao_social, tipo, data_fundacao, ramo_atividade_id) values (3, '43.015.854/0001-66', 'Costura Geral', 'Lurdes Lopes Correia', 'MEI', '2005-04-24', 3);
+insert into empresa (id, cnpj, nome_fantasia, razao_social, tipo, data_fundacao, ramo_atividade_id) values (4, '52.645.145/0001-24', 'Games Star', 'Fulano Beltrano Sousa', 'ETRELI', '2015-11-02', 4);

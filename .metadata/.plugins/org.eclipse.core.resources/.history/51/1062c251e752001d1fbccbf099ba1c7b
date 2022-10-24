@@ -1,0 +1,34 @@
+package com.tiago.erp.repository;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.tiago.erp.model.Empresa;
+import com.tiago.erp.model.RamoAtividade;
+
+public class CamadaPersistencia {
+	
+	public static void main(String[] args) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("cadastro-empresa");
+		
+		EntityManager em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
+		
+		//Declarando os repositorios
+		RamoAtividades ramoAtividade = new RamoAtividades(em);
+		Empresas empresas = new Empresas(em);
+		
+		//Buscando as informações do banco
+		List<RamoAtividade> ListaDeRamoAtividades = ramoAtividade.pesquisar("");
+		List<Empresa> ListaDeEmpresa = empresas.pesquisar("");
+		System.out.println(ListaDeEmpresa);
+		
+		//Criando a empresa
+		Empresa empresa = new Empresa();
+		
+	}
+}

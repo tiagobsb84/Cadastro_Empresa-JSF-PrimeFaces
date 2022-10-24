@@ -1,0 +1,31 @@
+package com.tiago.erp.repository;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+
+import com.tiago.erp.model.RamoAtividade;
+
+public class RamoAtividades implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private EntityManager manager;
+	
+	public RamoAtividades() {
+		
+	}
+	
+	public RamoAtividades(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	public List<RamoAtividade> pesquisar(String descricao) {
+		CriteriaBuilder criteriaBuilder = manager.getCriteriaBuilder();
+		
+		CriteriaBuilder<RamoAtividade> criteriaQuery = criteriaBuilder
+	}
+
+}

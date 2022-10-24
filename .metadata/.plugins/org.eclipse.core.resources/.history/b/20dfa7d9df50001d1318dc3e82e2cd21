@@ -1,0 +1,5 @@
+package com.tiago.erp.repository;
+
+public class SchemaGeneration {
+
+}
